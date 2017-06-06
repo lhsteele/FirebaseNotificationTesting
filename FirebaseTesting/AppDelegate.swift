@@ -39,7 +39,17 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         NotificationCenter.default.addObserver(self, selector: #selector(self.tokenRefreshNotification), name: .firInstanceIDTokenRefresh, object: nil)
         
+        newEntryToFB()
+        
         return true
+    }
+    
+    func newEntryToFB() {
+        let databaseRef = FIRDatabase.database().reference(fromURL: "https://notificationtesting-6a447.firebaseio.com/")
+        //let newEntry = databaseRef.child("Started Journeys").child("SharedWithFireID")
+        let entry = ["CurrentLat" : 5.0, "CurrentLong" : 6.0, "DestinationLat" : 7.0, "DestinationLong" : 8.0, "JourneyFireID" : 56789]
+        let childUpdates = ["/Started Journeys/\"SharedWithFireID2" : entry]
+        databaseRef.updateChildValues(childUpdates)
     }
     
     func application(_ application: UIApplication, didReceiveRemoteNotification userInfo: [AnyHashable : Any]) {

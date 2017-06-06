@@ -17,9 +17,9 @@
 		EF4259B41EE25F54002F560E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EF4259B21EE25F54002F560E /* LaunchScreen.storyboard */; };
 		EF4259BF1EE25F55002F560E /* FirebaseTestingTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF4259BE1EE25F55002F560E /* FirebaseTestingTests.swift */; };
 		EF4259CA1EE25F55002F560E /* FirebaseTestingUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF4259C91EE25F55002F560E /* FirebaseTestingUITests.swift */; };
-		EF4259FD1EE2781D002F560E /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = EF4259FC1EE2781D002F560E /* GoogleService-Info.plist */; };
-		EF4259FE1EE2781D002F560E /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = EF4259FC1EE2781D002F560E /* GoogleService-Info.plist */; };
-		EF4259FF1EE2781D002F560E /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = EF4259FC1EE2781D002F560E /* GoogleService-Info.plist */; };
+		EFBC35A71EE720E500445985 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = EFBC35A61EE720E500445985 /* GoogleService-Info.plist */; };
+		EFBC35A81EE720E500445985 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = EFBC35A61EE720E500445985 /* GoogleService-Info.plist */; };
+		EFBC35A91EE720E500445985 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = EFBC35A61EE720E500445985 /* GoogleService-Info.plist */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -63,7 +63,7 @@
 		EF4259C91EE25F55002F560E /* FirebaseTestingUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseTestingUITests.swift; sourceTree = "<group>"; };
 		EF4259CB1EE25F55002F560E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		EF4259DF1EE26ADF002F560E /* FirebaseTesting.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = FirebaseTesting.entitlements; sourceTree = "<group>"; };
-		EF4259FC1EE2781D002F560E /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
+		EFBC35A61EE720E500445985 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -149,7 +149,7 @@
 				EF4259B01EE25F54002F560E /* Assets.xcassets */,
 				EF4259B21EE25F54002F560E /* LaunchScreen.storyboard */,
 				EF4259B51EE25F54002F560E /* Info.plist */,
-				EF4259FC1EE2781D002F560E /* GoogleService-Info.plist */,
+				EFBC35A61EE720E500445985 /* GoogleService-Info.plist */,
 			);
 			path = FirebaseTesting;
 			sourceTree = "<group>";
@@ -297,7 +297,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				EF4259B41EE25F54002F560E /* LaunchScreen.storyboard in Resources */,
-				EF4259FD1EE2781D002F560E /* GoogleService-Info.plist in Resources */,
+				EFBC35A71EE720E500445985 /* GoogleService-Info.plist in Resources */,
 				EF4259B11EE25F54002F560E /* Assets.xcassets in Resources */,
 				EF4259AF1EE25F54002F560E /* Main.storyboard in Resources */,
 			);
@@ -307,7 +307,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				EF4259FE1EE2781D002F560E /* GoogleService-Info.plist in Resources */,
+				EFBC35A81EE720E500445985 /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -315,7 +315,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				EF4259FF1EE2781D002F560E /* GoogleService-Info.plist in Resources */,
+				EFBC35A91EE720E500445985 /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
