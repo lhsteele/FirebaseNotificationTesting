@@ -42,11 +42,18 @@ exports.sanitizePost = functions.database
 	}
 	*/
 	//Listens for new messages added and adds a new child to the entry. (just for testing)
-	exports.newEntry = functions.database.ref('/Started Journeys')
+	exports.newEntry = functions.database.ref('/Started Journeys/{fireUserID}')
 		.onWrite(event => {
-			const original = event.data.val();
-			console.log('Write event triggered')
-			const testValue = 'This test worked again.'
-			return event.data.ref.parent.child('Test').set(testValue);
+			const original = event.data.val()
+			console.log(original)
+			console.log(original.SharedWithID)
+			//const journeyUserID = event.params.UsersFireID
+			//Need to find a way access the value of key SharedWithID assign that
+			//to sharedUserID.
+			//const sharedUserID = event.data.child('SharedWithID')
+			const sharedUserID = original.SharedWithID
+			console.log(sharedUserID)
+			//const testValue = sharedUserID
+			return event.data.ref.parent.child('JourneySharedWith').set(sharedUserID)
 		})
 

@@ -47,8 +47,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func newEntryToFB() {
         let databaseRef = FIRDatabase.database().reference(fromURL: "https://notificationtesting-6a447.firebaseio.com/")
         //let newEntry = databaseRef.child("Started Journeys").child("SharedWithFireID")
-        let entry = ["CurrentLat" : 5.0, "CurrentLong" : 6.0, "DestinationLat" : 7.0, "DestinationLong" : 8.0, "JourneyFireID" : 56789]
-        let childUpdates = ["/Started Journeys/\"SharedWithFireID2" : entry]
+        let userNumber = arc4random() % 100
+        let sharedWithID = arc4random() % 100
+        let entry = ["CurrentLat" : 5.0, "CurrentLong" : 6.0, "DestinationLat" : 7.0, "DestinationLong" : 8.0, "SharedWithID" : sharedWithID] as [String : Any]
+        //"\" is called escpaing and only used to include special characters.
+        let childUpdates = ["/Started Journeys/UsersFireID\(userNumber)" : entry]
         databaseRef.updateChildValues(childUpdates)
     }
     
