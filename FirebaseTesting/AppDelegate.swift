@@ -110,7 +110,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
     
     func application(_ application: UIApplication, didRegisterForRemoteNotificationsWithDeviceToken deviceToken: Data) {
-        print ("APNs token retrieved: \(deviceToken)")
+        var readableToken: String = ""
+        for i in 0..<deviceToken.count {
+            readableToken += String(format: "%02.2hhx", deviceToken[i] as CVarArg)
+        }
+        print ("APNs token retrieved: \(readableToken)")
         
         //with swizzling disabled must set APNs token here.
         FIRInstanceID.instanceID().setAPNSToken(deviceToken, type: FIRInstanceIDAPNSTokenType.sandbox)
