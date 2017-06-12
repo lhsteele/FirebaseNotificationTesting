@@ -1,59 +1,51 @@
+// This registration token comes from the client FCM SDKs.
 var functions = require('firebase-functions');
+var admin = require('firebase-admin')
+var registrationToken = "eUoYdUCtU9Y:APA91bFzXg6hMjB65S8eFOqgL161kO34Xtyo9NOP7fgvhsVxJs0Cikd5mTaSZFYW39WXqV0mvwprDeGI8hN-7atQYeLvzDceVqreGiDCxMotlGCArYxiJM-pXZ91sDIAQX7ia-9kE7yA";
 
-// // Create and Deploy Your First Cloud Functions
-// // https://firebase.google.com/docs/functions/write-firebase-functions
-//
-//exports.helloWorld = functions.https.onRequest((request, response) => {
-	//response.send("Hello from Lisa!");
-//});
+admin.initializeApp({
+  credential: admin.credential.applicationDefault(),
+  databaseURL: "https://notificationtesting-6a447.firebaseio.com/"
+});
 
-//define and export a new function called "Sanitize Post"
-//On other side of =, specify the event I want to trigger on.
-//The path is posts, and it uses a wildcard denoted by curly brackets, to match the push Id of the post in that path.
-/*
-exports.sanitizePost = functions.database
-	.ref('/posts/{pushId}')
-	//interested in write events
-	.onWrite(event => {
-		const post = event.data.val()
-		if (post.sanitized) {
-			return
-		}
-		console.log("Sanitizing new post" + event.params.pushId)
-		console.log(post)
-		post.sanitized = true
-		post.title = sanitize(post.title)
-		post.body = sanitize(post.body)
-		//Don't want this function to return before the write back to the db is complete.
-		//.set method is asynchronous, meaning it happens right away. Write happens in the background.
-		//Cloud functions uses something called a promise to track the completion of that write. 
-		//Without this, there's a possibility the write may not fully complete and you lose data.
-		//need to ensure to return the promise, or else the
-		const promise = event.data.ref.set(post)
-		return promise
-		//or:
-		// return event.data.ref.set(post)
-	})
+// See the "Defining the message payload" section below for details
+// on how to define a message payload.
+var payload = {
+  notification: {
+    title: "Name of App",
+    body: "Someone has shared a journey with you."
+  },
+};
 
-	function sanitize(s) {
-		var sanitizedText = s 
-		sanitizedText = sanitizedText.replace(/\bstupid\b/ig, "wonderful")
-		return sanitizedText
-	}
-	*/
-	//Listens for new messages added and adds a new child to the entry. (just for testing)
-	exports.newEntry = functions.database.ref('/Started Journeys/{fireUserID}')
-		.onWrite(event => {
-			const original = event.data.val()
-			console.log(original)
-			console.log(original.SharedWithID)
-			//const journeyUserID = event.params.UsersFireID
-			//Need to find a way access the value of key SharedWithID assign that
-			//to sharedUserID.
-			//const sharedUserID = event.data.child('SharedWithID')
-			const sharedUserID = original.SharedWithID
-			console.log(sharedUserID)
-			//const testValue = sharedUserID
-			return event.data.ref.parent.child('JourneySharedWith').set(sharedUserID)
-		})
+var options = {
+  priority: "high"
+}
+
+
+exports.newEntry = functions.database.ref('/Started Journeys/{fireUserID}')
+    .onWrite(event => {
+      const original = event.data.val()
+      console.log(original)
+      console.log(original.SharedWithID)
+      //const journeyUserID = event.params.UsersFireID
+      //Need to find a way access the value of key SharedWithID assign that
+      //to sharedUserID.
+      //const sharedUserID = event.data.child('SharedWithID')
+      const sharedUserID = original.SharedWithID
+      console.log(sharedUserID)
+      //const testValue = sharedUserID
+      //return event.data.ref.parent.child('JourneySharedWith').set(sharedUserID)
+      return admin.messaging().sendToDevice(registrationToken, payload, options)
+  .then(function(response) {
+    // See the MessagingDevicesResponse reference documentation for
+    // the contents of response.
+    console.log("Successfully sent message:", response);
+  })
+  .catch(function(error) {
+    console.log("Error sending message:", error);
+  });
+})
+
+
+
 

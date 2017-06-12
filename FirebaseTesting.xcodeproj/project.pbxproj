@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		83F6F1D3CBED386024177609 /* Pods_FirebaseTesting.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B3689FFDE27C3ABC5A091652 /* Pods_FirebaseTesting.framework */; };
+		83F6F1D3CBED386024177609 /* Pods_FirebaseTesting.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B3689FFDE27C3ABC5A091652 /* Pods_FirebaseTesting.framework */; settings = {ATTRIBUTES = (Required, ); }; };
 		8C6DCB1147E3285EB91669E5 /* Pods_FirebaseTestingTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D8340C917E81A8358E6C1042 /* Pods_FirebaseTestingTests.framework */; };
 		A711B51D860289DB7071D1F5 /* Pods_FirebaseTestingUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 77A57D50273CB481D4D2ECD6 /* Pods_FirebaseTestingUITests.framework */; };
 		EF4259AA1EE25F54002F560E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF4259A91EE25F54002F560E /* AppDelegate.swift */; };
@@ -254,6 +254,9 @@
 						SystemCapabilities = {
 							com.apple.Push = {
 								enabled = 1;
+							};
+							com.apple.iCloud = {
+								enabled = 0;
 							};
 						};
 					};

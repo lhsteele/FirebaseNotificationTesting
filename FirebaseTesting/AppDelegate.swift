@@ -17,6 +17,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     var window: UIWindow?
     var ref: FIRDatabaseReference?
     let gcmMessageIDKey = "gcm.message_id"
+    var userInfo: String = ""
+    var usersFireID = "12345"
     
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         
@@ -40,7 +42,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         NotificationCenter.default.addObserver(self, selector: #selector(self.tokenRefreshNotification), name: .firInstanceIDTokenRefresh, object: nil)
         
         newEntryToFB()
-        
+                
         return true
     }
     
@@ -81,9 +83,17 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         //to perform action when app is opened upon notification click, set click_action in notification payload.
     }
     
+    func enablesMessaging() {
+        let databaseRef = FIRDatabase.database().reference(fromURL: "https://notificationtesting-6a447.firebaseio.com/")
+        let entry = FIRInstanceID.instanceID().token()!
+        let update = ["/UserInfo/\(usersFireID)" : entry]
+        databaseRef.updateChildValues(update)
+    }
+    
     func tokenRefreshNotification(_ notification: Notification) {
         if let refreshedToken = FIRInstanceID.instanceID().token() {
             print ("InstanceID token: \(refreshedToken)")
+            enablesMessaging()
         }
         
         connectToFCM()
@@ -118,7 +128,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         //with swizzling disabled must set APNs token here.
         FIRInstanceID.instanceID().setAPNSToken(deviceToken, type: FIRInstanceIDAPNSTokenType.sandbox)
+        
     }
+    
+    
     
     
     func application(application: UIApplication, didReceiveRemoteNotification userInfo: [NSObject : AnyObject], fetchCompletionHandler completionHandler: (UIBackgroundFetchResult) -> Void) {
@@ -126,7 +139,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         FIRMessaging.messaging().appDidReceiveMessage(userInfo)
         // handle your message
     }
-    
     
     
     func applicationWillResignActive(_ application: UIApplication) {
@@ -187,11 +199,27 @@ extension AppDelegate : UNUserNotificationCenterDelegate {
         completionHandler()
     }
 }
+
+
 // [END ios_10_message_handling]
 // [START ios_10_data_message_handling]
 extension AppDelegate : FIRMessagingDelegate {
+    
     // Receive data message on iOS 10 devices while app is in the foreground.
     func applicationReceivedRemoteMessage(_ remoteMessage: FIRMessagingRemoteMessage) {
         print(remoteMessage.appData)
     }
+    func messaging(_ messaging: FIRMessaging, didRefreshRegistrationToken fcmToken: String) {
+        userInfo = fcmToken
+        print ("Firebase registration token: \(fcmToken)")
+        enableMessaging()
+    }
+    
+    func enableMessaging() {
+        let databaseRef = FIRDatabase.database().reference(fromURL: "https://notificationtesting-6a447.firebaseio.com/")
+        let entry = userInfo
+        let update = ["/UserInfo/\(usersFireID)" : entry]
+        databaseRef.updateChildValues(update)
+    }
+    
 }
