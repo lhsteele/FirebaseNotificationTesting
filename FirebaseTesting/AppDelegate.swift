@@ -19,6 +19,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     let gcmMessageIDKey = "gcm.message_id"
     var userInfo: String = ""
     var usersFireID = "12345"
+    var user: String = ""
     
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         
@@ -40,11 +41,16 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         FIRApp.configure()
         
         NotificationCenter.default.addObserver(self, selector: #selector(self.tokenRefreshNotification), name: .firInstanceIDTokenRefresh, object: nil)
-        
+         
         newEntryToFB()
-                
+        let user = FIRInstanceID.instanceID().token()
+        
+        
+        
         return true
     }
+    
+    
     
     func newEntryToFB() {
         let databaseRef = FIRDatabase.database().reference(fromURL: "https://notificationtesting-6a447.firebaseio.com/")
@@ -209,12 +215,7 @@ extension AppDelegate : FIRMessagingDelegate {
     func applicationReceivedRemoteMessage(_ remoteMessage: FIRMessagingRemoteMessage) {
         print(remoteMessage.appData)
     }
-    func messaging(_ messaging: FIRMessaging, didRefreshRegistrationToken fcmToken: String) {
-        userInfo = fcmToken
-        print ("Firebase registration token: \(fcmToken)")
-        enableMessaging()
-    }
-    
+        
     func enableMessaging() {
         let databaseRef = FIRDatabase.database().reference(fromURL: "https://notificationtesting-6a447.firebaseio.com/")
         let entry = userInfo

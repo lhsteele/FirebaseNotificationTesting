@@ -10,6 +10,9 @@
 		83F6F1D3CBED386024177609 /* Pods_FirebaseTesting.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B3689FFDE27C3ABC5A091652 /* Pods_FirebaseTesting.framework */; settings = {ATTRIBUTES = (Required, ); }; };
 		8C6DCB1147E3285EB91669E5 /* Pods_FirebaseTestingTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D8340C917E81A8358E6C1042 /* Pods_FirebaseTestingTests.framework */; };
 		A711B51D860289DB7071D1F5 /* Pods_FirebaseTestingUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 77A57D50273CB481D4D2ECD6 /* Pods_FirebaseTestingUITests.framework */; };
+		EF2D04361EF38C1000942F51 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = EF2D04351EF38C1000942F51 /* GoogleService-Info.plist */; };
+		EF2D04371EF38C1000942F51 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = EF2D04351EF38C1000942F51 /* GoogleService-Info.plist */; };
+		EF2D04381EF38C1000942F51 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = EF2D04351EF38C1000942F51 /* GoogleService-Info.plist */; };
 		EF4259AA1EE25F54002F560E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF4259A91EE25F54002F560E /* AppDelegate.swift */; };
 		EF4259AC1EE25F54002F560E /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF4259AB1EE25F54002F560E /* ViewController.swift */; };
 		EF4259AF1EE25F54002F560E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EF4259AD1EE25F54002F560E /* Main.storyboard */; };
@@ -17,9 +20,6 @@
 		EF4259B41EE25F54002F560E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EF4259B21EE25F54002F560E /* LaunchScreen.storyboard */; };
 		EF4259BF1EE25F55002F560E /* FirebaseTestingTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF4259BE1EE25F55002F560E /* FirebaseTestingTests.swift */; };
 		EF4259CA1EE25F55002F560E /* FirebaseTestingUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF4259C91EE25F55002F560E /* FirebaseTestingUITests.swift */; };
-		EFBC35A71EE720E500445985 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = EFBC35A61EE720E500445985 /* GoogleService-Info.plist */; };
-		EFBC35A81EE720E500445985 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = EFBC35A61EE720E500445985 /* GoogleService-Info.plist */; };
-		EFBC35A91EE720E500445985 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = EFBC35A61EE720E500445985 /* GoogleService-Info.plist */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +49,7 @@
 		B3689FFDE27C3ABC5A091652 /* Pods_FirebaseTesting.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FirebaseTesting.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D59DA86067C4D87796353BFA /* Pods-FirebaseTestingTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FirebaseTestingTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-FirebaseTestingTests/Pods-FirebaseTestingTests.debug.xcconfig"; sourceTree = "<group>"; };
 		D8340C917E81A8358E6C1042 /* Pods_FirebaseTestingTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FirebaseTestingTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		EF2D04351EF38C1000942F51 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		EF4259A61EE25F54002F560E /* FirebaseTesting.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FirebaseTesting.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EF4259A91EE25F54002F560E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		EF4259AB1EE25F54002F560E /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -63,7 +64,6 @@
 		EF4259C91EE25F55002F560E /* FirebaseTestingUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseTestingUITests.swift; sourceTree = "<group>"; };
 		EF4259CB1EE25F55002F560E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		EF4259DF1EE26ADF002F560E /* FirebaseTesting.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = FirebaseTesting.entitlements; sourceTree = "<group>"; };
-		EFBC35A61EE720E500445985 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -149,7 +149,7 @@
 				EF4259B01EE25F54002F560E /* Assets.xcassets */,
 				EF4259B21EE25F54002F560E /* LaunchScreen.storyboard */,
 				EF4259B51EE25F54002F560E /* Info.plist */,
-				EFBC35A61EE720E500445985 /* GoogleService-Info.plist */,
+				EF2D04351EF38C1000942F51 /* GoogleService-Info.plist */,
 			);
 			path = FirebaseTesting;
 			sourceTree = "<group>";
@@ -252,6 +252,9 @@
 						DevelopmentTeam = 77F66T2364;
 						ProvisioningStyle = Automatic;
 						SystemCapabilities = {
+							com.apple.BackgroundModes = {
+								enabled = 1;
+							};
 							com.apple.Push = {
 								enabled = 1;
 							};
@@ -300,7 +303,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				EF4259B41EE25F54002F560E /* LaunchScreen.storyboard in Resources */,
-				EFBC35A71EE720E500445985 /* GoogleService-Info.plist in Resources */,
+				EF2D04361EF38C1000942F51 /* GoogleService-Info.plist in Resources */,
 				EF4259B11EE25F54002F560E /* Assets.xcassets in Resources */,
 				EF4259AF1EE25F54002F560E /* Main.storyboard in Resources */,
 			);
@@ -310,7 +313,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				EFBC35A81EE720E500445985 /* GoogleService-Info.plist in Resources */,
+				EF2D04371EF38C1000942F51 /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -318,7 +321,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				EFBC35A91EE720E500445985 /* GoogleService-Info.plist in Resources */,
+				EF2D04381EF38C1000942F51 /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -627,6 +630,7 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				DEVELOPMENT_TEAM = 77F66T2364;
 				INFOPLIST_FILE = FirebaseTesting/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.lisahsteele.FirebaseTesting;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -643,6 +647,7 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				DEVELOPMENT_TEAM = 77F66T2364;
 				INFOPLIST_FILE = FirebaseTesting/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.lisahsteele.FirebaseTesting;
 				PRODUCT_NAME = "$(TARGET_NAME)";
